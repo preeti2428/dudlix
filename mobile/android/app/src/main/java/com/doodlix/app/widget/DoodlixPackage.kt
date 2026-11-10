@@ -1,10 +1,8 @@
 package com.doodlix.app.widget
 
-import android.view.View
 import com.facebook.react.ReactPackage
 import com.facebook.react.bridge.NativeModule
 import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.uimanager.ReactShadowNode
 import com.facebook.react.uimanager.ViewManager
 
 class DoodlixPackage : ReactPackage {
@@ -12,8 +10,7 @@ class DoodlixPackage : ReactPackage {
         return listOf(DoodlixWidgetBridgeModule(reactContext))
     }
 
-    override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<View, ReactShadowNode<*>>> {
+    override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> {
         return emptyList()
     }
 }
-
