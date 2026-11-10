@@ -1,9 +1,11 @@
 name: Build Android Widget APK
 
 on:
-  push:
-    branches: [ main ]
   workflow_dispatch:
+  push:
+    paths:
+      - 'mobile/android/**'
+      - '.github/workflows/build-apk.yml'
 
 jobs:
   build:
