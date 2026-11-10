@@ -16,6 +16,7 @@
     "@react-navigation/native-stack": "^7.2.0",
     "@shopify/react-native-skia": "^1.5.7",
     "expo": "~52.0.28",
+    "expo-asset": "~11.0.2",
     "expo-camera": "~16.0.14",
     "expo-clipboard": "~7.0.1",
     "expo-constants": "~17.0.5",
@@ -39,4 +40,3 @@
   },
   "private": true
 }
-
