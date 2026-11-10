@@ -1,0 +1,59 @@
+{
+  "expo": {
+    "name": "Doodlix",
+    "slug": "doodlix",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "scheme": "doodlix",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FAF9FF"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.doodlix.app",
+      "entitlements": {
+        "com.apple.security.application-groups": [
+          "group.com.doodlix.app"
+        ]
+      },
+      "infoPlist": {
+        "NSCameraUsageDescription": "Doodlix needs camera access to scan your friend's QR code to connect and share home-screen widgets."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#7665E8"
+      },
+      "package": "com.doodlix.app",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.INTERNET",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.WAKE_LOCK",
+        "android.permission.POST_NOTIFICATIONS"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow Doodlix to scan friend pairing QR codes."
+        }
+      ],
+      "./plugins/withDoodlixWidget.js",
+      "./plugins/withDoodlixAndroidWidget.js"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "doodlix-home-screen-widget"
+      }
+    }
+  }
+}
+

@@ -1,0 +1,30 @@
+{
+  "name": "doodlix",
+  "version": "1.0.0",
+  "description": "DOODLIX — Cross-Platform Live Drawing Home-Screen Widget",
+  "scripts": {
+    "server:install": "npm --prefix server install",
+    "server:build": "npm --prefix server run build",
+    "server:start": "npm --prefix server start",
+    "server:dev": "npm --prefix server run dev",
+    "mobile:install": "npm --prefix mobile install",
+    "mobile:start": "npm --prefix mobile start",
+    "mobile:android": "npm --prefix mobile run android",
+    "mobile:ios": "npm --prefix mobile run ios"
+  },
+  "keywords": [
+    "widget",
+    "drawing",
+    "widgetkit",
+    "appwidget",
+    "glance",
+    "cross-platform",
+    "socket.io",
+    "react-native",
+    "swift",
+    "kotlin"
+  ],
+  "author": "Doodlix Team",
+  "license": "MIT"
+}
+

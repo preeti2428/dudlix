@@ -1,0 +1,45 @@
+# Environment files (NEVER COMMIT SECRETS)
+.env
+.env*
+server/.env
+mobile/.env
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+
+# Production / Builds
+dist/
+build/
+.expo/
+.expo-shared/
+
+# Native build artifacts
+*.apk
+*.aab
+mobile/android/.gradle/
+mobile/android/app/build/
+mobile/android/.cxx/
+mobile/ios/build/
+mobile/ios/Pods/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Editor & OS files
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.idea/
+.vscode/
+Thumbs.db

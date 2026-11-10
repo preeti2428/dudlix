@@ -1,0 +1,113 @@
+{
+  "users": {
+    "demo-user-a-3dbee029": {
+      "userId": "demo-user-a-3dbee029",
+      "username": "Alex (Person A)",
+      "email": "alex.personA@doodlix.app",
+      "passwordHash": "$2a$10$XGbIH6JAXYG9pEddTSM7TuodblRUByAVznFauF4CWVTYHm9xaQU/q",
+      "initials": "AX",
+      "createdAt": "2026-11-10T03:40:31.334Z"
+    },
+    "demo-user-b-1496a422": {
+      "userId": "demo-user-b-1496a422",
+      "username": "Taylor (Person B)",
+      "email": "taylor.personB@doodlix.app",
+      "passwordHash": "$2a$10$oSqQUPvPup.563yBWzmysOflCiNM08kqz1HbJETfmezeGP9pGHdwy",
+      "initials": "TB",
+      "createdAt": "2026-11-10T03:40:31.409Z"
+    }
+  },
+  "connections": {},
+  "rooms": {
+    "room_70a3e0c0-5bc": {
+      "roomId": "room_70a3e0c0-5bc",
+      "name": "Alex & Taylor Canvas",
+      "ownerId": "demo-user-a-3dbee029",
+      "members": [
+        {
+          "userId": "demo-user-a-3dbee029",
+          "username": "Alex (Person A)",
+          "initials": "AX",
+          "joinedAt": "2026-11-10T03:40:31.415Z"
+        },
+        {
+          "userId": "demo-user-b-1496a422",
+          "username": "Taylor (Person B)",
+          "initials": "TB",
+          "joinedAt": "2026-11-10T03:40:31.420Z"
+        }
+      ],
+      "inviteCode": "DLX-PE4MBP",
+      "createdAt": "2026-11-10T03:40:31.415Z",
+      "updatedAt": "2026-11-10T03:40:31.424Z",
+      "latestDrawingId": "draw_24375c58-93b",
+      "latestSnapshotUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCI+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI0ZBRjlGRiIgcng9IjI0IiAvPgogIDxwYXRoIGQ9Ik0gMTAwIDE1MCBRIDEwMCAxNTAsIDEyNSAxMjUgUSAxNTAgMTAwLCAxNzUgMTI1IFEgMjAwIDE1MCwgMTc1IDE4NSBRIDE1MCAyMjAsIDEyNSAxODUgTCAxMDAgMTUwIiBzdHJva2U9IiM3NjY1RTgiIHN0cm9rZS13aWR0aD0iNiIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIxIiAvPgo8L3N2Zz4="
+    },
+    "room_b8ee14a0-ed8": {
+      "roomId": "room_b8ee14a0-ed8",
+      "name": "Live Drawing Room",
+      "ownerId": "demo-user-a-3dbee029",
+      "members": [
+        {
+          "userId": "demo-user-a-3dbee029",
+          "username": "Alex (Person A)",
+          "initials": "AX",
+          "joinedAt": "2026-11-10T03:51:04.436Z"
+        },
+        {
+          "userId": "guest_oL33y",
+          "username": "Taylor",
+          "initials": "TA",
+          "joinedAt": "2026-11-10T03:51:04.472Z"
+        }
+      ],
+      "inviteCode": "DLX-UNRP5K",
+      "createdAt": "2026-11-10T03:51:04.436Z",
+      "updatedAt": "2026-11-10T03:51:04.472Z"
+    }
+  },
+  "drawings": {
+    "draw_24375c58-93b": {
+      "drawingId": "draw_24375c58-93b",
+      "roomId": "room_70a3e0c0-5bc",
+      "authorId": "demo-user-a-3dbee029",
+      "authorName": "Alex (Person A)",
+      "strokes": [
+        {
+          "id": "stroke_test_1",
+          "userId": "demo-user-a-3dbee029",
+          "color": "#7665E8",
+          "size": 6,
+          "tool": "pen",
+          "points": [
+            {
+              "x": 100,
+              "y": 150
+            },
+            {
+              "x": 150,
+              "y": 100
+            },
+            {
+              "x": 200,
+              "y": 150
+            },
+            {
+              "x": 150,
+              "y": 220
+            },
+            {
+              "x": 100,
+              "y": 150
+            }
+          ],
+          "createdAt": 1794282031422
+        }
+      ],
+      "snapshotUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCI+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI0ZBRjlGRiIgcng9IjI0IiAvPgogIDxwYXRoIGQ9Ik0gMTAwIDE1MCBRIDEwMCAxNTAsIDEyNSAxMjUgUSAxNTAgMTAwLCAxNzUgMTI1IFEgMjAwIDE1MCwgMTc1IDE4NSBRIDE1MCAyMjAsIDEyNSAxODUgTCAxMDAgMTUwIiBzdHJva2U9IiM3NjY1RTgiIHN0cm9rZS13aWR0aD0iNiIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIxIiAvPgo8L3N2Zz4=",
+      "updatedAt": "2026-11-10T03:40:31.424Z"
+    }
+  },
+  "widgetPreferences": {},
+  "deviceTokens": {}
+}
