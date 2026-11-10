@@ -34,29 +34,24 @@ jobs:
         working-directory: mobile/ios
         run: pod install
 
-      - name: Build Unsigned iOS Archive (.app)
+      - name: Build Unsigned iOS Archive (.xcarchive)
         working-directory: mobile/ios
         run: |
-          xcodebuild \
+          xcodebuild archive \
             -workspace Doodlix.xcworkspace \
             -scheme Doodlix \
             -configuration Release \
-            -sdk iphoneos \
-            -destination 'generic/platform=iOS' \
-            -derivedDataPath build \
-            CODE_SIGN_STYLE=Manual \
-            CODE_SIGN_IDENTITY="-" \
-            DEVELOPMENT_TEAM="1234567890" \
+            -archivePath ./build/Doodlix.xcarchive \
+            CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
-            CODE_SIGN_ENTITLEMENTS="" \
-            COMPILER_INDEX_STORE_ENABLE=NO \
-            clean build
+            CODE_SIGNING_ALLOWED=NO \
+            COMPILER_INDEX_STORE_ENABLE=NO
 
       - name: Package App into .ipa for Sideloadly / AltStore
         working-directory: mobile/ios
         run: |
           mkdir -p Payload
-          cp -r build/Build/Products/Release-iphoneos/Doodlix.app Payload/
+          cp -r ./build/Doodlix.xcarchive/Products/Applications/Doodlix.app Payload/
           zip -r Doodlix.ipa Payload
 
       - name: Upload IPA Artifact
