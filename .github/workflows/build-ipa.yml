@@ -28,30 +28,33 @@ jobs:
 
       - name: Expo Prebuild (Generate iOS Native Project)
         working-directory: mobile
-        run: npx expo prebuild --platform ios --clean
+        run: |
+          npx expo prebuild --platform ios --clean
+          echo "export NODE_BINARY=$(which node)" > ios/.xcode.env.local
 
       - name: Install CocoaPods
         working-directory: mobile/ios
         run: |
           pod install
 
-      - name: Build Unsigned iOS Archive (.xcarchive)
+      - name: Build Unsigned iOS App
         working-directory: mobile/ios
         run: |
           set -o pipefail
-          xcodebuild archive \
+          xcodebuild \
             -workspace Doodlix.xcworkspace \
             -scheme Doodlix \
             -configuration Release \
+            -sdk iphoneos \
             -destination 'generic/platform=iOS' \
-            -archivePath ./build/Doodlix.xcarchive \
+            -derivedDataPath build \
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGNING_ALLOWED=NO \
             COMPILER_INDEX_STORE_ENABLE=NO 2>&1 | tee xcodebuild.log || {
-              echo "::error::xcodebuild archive failed!"
+              echo "::error::xcodebuild failed!"
               echo "==================== EXTRACTED ERRORS ===================="
-              grep -E -C 3 "(error:|fatal error:|\*\* ARCHIVE FAILED \*\*)" xcodebuild.log || true
+              grep -E -C 3 "(error:|fatal error:|\*\* BUILD FAILED \*\*)" xcodebuild.log || true
               echo "==================== LAST 60 LINES ===================="
               tail -n 60 xcodebuild.log
               exit 1
@@ -61,7 +64,13 @@ jobs:
         working-directory: mobile/ios
         run: |
           mkdir -p Payload
-          cp -r ./build/Doodlix.xcarchive/Products/Applications/Doodlix.app Payload/
+          APP_PATH=$(find build -name "Doodlix.app" -type d | head -n 1)
+          if [ -z "$APP_PATH" ]; then
+            echo "::error::Doodlix.app not found in build directory!"
+            exit 1
+          fi
+          echo "Found app at: $APP_PATH"
+          cp -r "$APP_PATH" Payload/
           zip -r Doodlix.ipa Payload
 
       - name: Upload IPA Artifact
